@@ -27,7 +27,7 @@ public class BookController {
 	// /booksにGET要求
 	@GetMapping
 	String list(Model model) {
-		model.addAttribute("book", bookService.findAll());
+		model.addAttribute("books", bookService.findAll());
 		return "books/list";
 	}
 	
@@ -43,7 +43,7 @@ public class BookController {
 	String editForm(@RequestParam Integer id, BookForm form) {
 		BookForm bookForm = bookService.findOne(id);
 		BeanUtils.copyProperties(bookForm, form);
-		return "book/edit";
+		return "books/edit";
 	}
 	
 	// /books/editにPOST要求

@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BookBean {
-	Integer id ;
-	String title;
-	String writter;
-	String publisher;
-	Integer price;
+	private Integer id ;
+	private String title;
+	private String writter;
+	private String publisher;
+	private Integer price;
 }

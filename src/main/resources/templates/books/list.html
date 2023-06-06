@@ -14,9 +14,9 @@
 			</table>
 			<input type="submit" value="作成" />
 		</form>
-		<hr />
+		<hr/>
 		<table>
-			<tr th:each="book:${books}">
+			<tr th:each="book : ${books}">
 				<td th:text="${book.id}">100</td>
 				<td th:text="${book.title}">タイトルA</td>
 				<td th:text="${book.writter}">著者A</td>
