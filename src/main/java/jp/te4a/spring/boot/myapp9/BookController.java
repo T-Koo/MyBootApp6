@@ -1,4 +1,4 @@
-package jp.te4a.spring.boot.myapp8;
+package jp.te4a.spring.boot.myapp9;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,8 +41,8 @@ public class BookController {
 	// /books/editにパラメタformを含むPOST要求
 	@PostMapping(path="edit", params="form")
 	String editForm(@RequestParam Integer id, BookForm form) {
-		BookForm bookForm = bookService.findOne(id);
-		BeanUtils.copyProperties(bookForm, form);
+		BookForm bookForm = bookService.findOne(id);	//<-bookFormの中身null
+		BeanUtils.copyProperties(bookForm, form);		//<-bookFormがnullだからformもnull
 		return "books/edit";
 	}
 	
@@ -55,8 +55,8 @@ public class BookController {
 	
 	// /books/deleteにPOST要求
 	@PostMapping(path="delete")
-	String delete(@RequestParam Integer id) {
-		bookService.delete(id);
+	String delete(@RequestParam BookBean bookBean) {
+		bookService.delete(bookBean);
 		return "redirect:/books";
 	}
 	
