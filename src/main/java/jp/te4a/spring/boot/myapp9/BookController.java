@@ -41,8 +41,8 @@ public class BookController {
 	// /books/editにパラメタformを含むPOST要求
 	@PostMapping(path="edit", params="form")
 	String editForm(@RequestParam Integer id, BookForm form) {
-		BookForm bookForm = bookService.findOne(id);	//<-bookFormの中身null
-		BeanUtils.copyProperties(bookForm, form);		//<-bookFormがnullだからformもnull
+		BookForm bookForm = bookService.findOne(id);
+		BeanUtils.copyProperties(bookForm, form);
 		return "books/edit";
 	}
 	
@@ -55,8 +55,8 @@ public class BookController {
 	
 	// /books/deleteにPOST要求
 	@PostMapping(path="delete")
-	String delete(@RequestParam BookBean bookBean) {
-		bookService.delete(bookBean);
+	String delete(@RequestParam Integer id) {
+		bookService.delete(id);
 		return "redirect:/books";
 	}
 	
