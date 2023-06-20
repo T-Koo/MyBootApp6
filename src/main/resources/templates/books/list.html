@@ -4,6 +4,7 @@
 		<meta charset="UTF-8"/>
 		<title>書籍登録一覧画面</title>
 		<link rel="stylesheet" type="text/css" href="../../static/css/style.css" th:href="@{/css/style.css}"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
 	</head>
 	<body>
 		<form th:action="@{/books/create}"th:object="${bookForm}" method="post">
@@ -22,7 +23,7 @@
 			<input type="submit" value="作成" />
 		</form>
 		<hr/>
-		<table>
+		<table class="table table-striped table-bordered table-condensed">
 			<tr th:each="book : ${books}">
 				<td th:text="${book.id}">100</td>
 				<td th:text="${book.title}">タイトルA</td>
