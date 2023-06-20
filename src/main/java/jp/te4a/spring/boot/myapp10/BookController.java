@@ -55,8 +55,8 @@ public class BookController {
 	
 	// /books/deleteにPOST要求
 	@PostMapping(path="delete")
-	String delete(@RequestParam BookBean bookBean) {
-		bookService.delete(bookBean);
+	String delete(@RequestParam Integer id) {
+		bookService.delete(id);
 		return "redirect:/books";
 	}
 	

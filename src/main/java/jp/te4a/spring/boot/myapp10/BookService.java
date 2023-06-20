@@ -26,8 +26,8 @@ public class BookService {
 		return bookForm;
 	}
 	
-	public void delete(BookBean bookBean) {
-		bookRepository.delete(bookBean);
+	public void delete(Integer id) {
+		bookRepository.deleteById(id);
 		}
 	
 	public List<BookForm>findAll(){
