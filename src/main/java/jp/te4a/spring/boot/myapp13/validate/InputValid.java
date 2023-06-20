@@ -1,4 +1,4 @@
-package jp.te4a.spring.boot.myapp12;
+package jp.te4a.spring.boot.myapp13.validate;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -9,13 +9,13 @@ import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 
 @Documented
-@Constraint(validatedBy = WritterValidator.class)
+@Constraint(validatedBy = InputValidator.class)
 @Target({ElementType.METHOD,ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 
-public @interface Writter {
-	String ok();
-	String message() default "input {ok}.";
+public @interface InputValid {
+	String param();
+	String message() default "input other than {param}.";
 	Class<?>[] groups() default{};
 	Class<? extends Payload>[] payload() default{};
 }
