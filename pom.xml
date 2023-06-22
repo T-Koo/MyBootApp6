@@ -6,6 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.1.0</version>
+		<!-- version 2.5.4だとWebSecurityConfigurerAdapterが使えるがjakartaが使えなくなる -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>jp.te4a.spring.boot</groupId>

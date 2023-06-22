@@ -1,13 +1,27 @@
 package jp.te4a.spring.boot.myapp13.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
+//import org.springframework.security.config.annotation.web.builders.WebSecurity;
 
+@Configuration
+@EnableWebSecurity
+@EnableMethodSecurity
+public class SecurityConfig{
+	@Bean
+	public WebSecurityCustomizer webSecurityCustomizer() {
+		return web -> web.ignoring().mvcMatchers("/css/**");
+	}
+	
+	
+}
+
+/*
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
@@ -41,3 +55,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.logoutSuccessUrl("/loginForm");
 	}
 }
+*/
