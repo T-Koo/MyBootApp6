@@ -1,7 +1,7 @@
 package jp.te4a.spring.boot.myapp13.validate;
 
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 
 public class WritterValidator implements ConstraintValidator<Writter, String> {
 	String param;

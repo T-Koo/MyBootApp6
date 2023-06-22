@@ -3,7 +3,7 @@ package jp.te4a.spring.boot.myapp13.bean;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "books")
