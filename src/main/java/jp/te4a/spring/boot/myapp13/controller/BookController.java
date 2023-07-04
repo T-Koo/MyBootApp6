@@ -58,7 +58,7 @@ public class BookController {
 	@PostMapping(path="edit")
 	String edit(@RequestParam Integer id,@Validated BookForm form, BindingResult result) {
 		if(result.hasErrors()) {
-			return editForm(id, form);
+			return "books/edit";
 		}
 		bookService.update(form);
 		return "redirect:/books";
