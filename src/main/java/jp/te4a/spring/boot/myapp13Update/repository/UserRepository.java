@@ -1,7 +1,8 @@
-package jp.te4a.spring.boot.myapp13.repository;
+package jp.te4a.spring.boot.myapp13Update.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import jp.te4a.spring.boot.myapp13.bean.UserBean;
+
+import jp.te4a.spring.boot.myapp13Update.bean.UserBean;
 
 public interface UserRepository extends JpaRepository<UserBean, String> {
 }

@@ -1,9 +1,9 @@
-package jp.te4a.spring.boot.myapp13.bean;
+package jp.te4a.spring.boot.myapp13Update.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "books")

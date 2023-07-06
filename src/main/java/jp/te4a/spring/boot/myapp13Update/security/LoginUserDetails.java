@@ -1,8 +1,9 @@
-package jp.te4a.spring.boot.myapp13.security;
+package jp.te4a.spring.boot.myapp13Update.security;
 
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
-import jp.te4a.spring.boot.myapp13.bean.UserBean;
+
+import jp.te4a.spring.boot.myapp13Update.bean.UserBean;
 import lombok.Data;
 
 @Data
