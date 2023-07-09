@@ -6,26 +6,29 @@
 		<link rel="stylesheet" type="text/css" href="../../static/css/style.css" th:href="@{/css/style.css}"/>
 		<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.3.0/css/bootstrap.min.css}"/>
 	</head>
-	<body>
-		<form th:action="@{/users/create}" th:object="${userForm}" method="post">
-		<table>
-			<tr>
-				<td>ユーザID:</td>
-				<td>
-					<input type="text" class="form-control" name="username" th:field="*{username}" th:errorclass="error-input" />
-					<span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="error-messages">error!</span>
-				</td>
-			</tr>
-			<tr>
-				<td>パスワード：</td>
-				<td>
-					<input type="text" class="form-control" name="password" th:field="*{password}" th:errorclass="error-input" />
-					<span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error-messages">error!</span>
-				</td>
-			</tr>
-		</table>
-		<input class="btn btn-lg btn-primary btn-block" type="submit" value="作成" />
-		</form>
-		<input class="btn btn-lg btn-primary btn-block" type="submit" value="ログイン画面" onclick="location.href='login'" />
+	<body class="text-center">
+		<div class="container">
+			<h1>アカウントの新規作成</h1>
+			<form class="form-signin" th:action="@{/users/create}" th:object="${userForm}" method="post">
+			<table>
+				<tr>
+					<td>ユーザID:</td>
+					<td>
+						<input type="text" class="form-control" name="username" th:field="*{username}" th:errorclass="error-input" />
+						<span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="error-messages">error!</span>
+					</td>
+				</tr>
+				<tr>
+					<td>パスワード：</td>
+					<td>
+						<input type="text" class="form-control" name="password" th:field="*{password}" th:errorclass="error-input" />
+						<span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error-messages">error!</span>
+					</td>
+				</tr>
+			</table>
+			<input class="btn btn-lg btn-primary btn-block" type="submit" value="作成" />
+			</form>
+			<input class="btn btn-lg btn-primary btn-block" type="submit" value="ログイン画面" onclick="location.href='login'" />
+		</div>
 	</body>
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security5">
 	<head>
 		<meta charset="UTF-8"/>
 		<title>書籍登録一覧画面</title>
@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<p>
-			<span sec:authentication="principal.user.username">duke</span>さんログイン中。
+			<span sec:authentication="principal.user.userId">duke</span>さんログイン中。
 		</p>
 		<form th:action="@{/logout}" method="post"><input type="submit" class="btnbtn-default btn-xs" value="ログアウト" /></form>
 		<form th:action="@{/books/create}"th:object="${bookForm}" method="post">
